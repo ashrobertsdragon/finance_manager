@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pf_manager"
+version = "0.1.0"
+description = "A simple personal finance tracking app"
+readme = "README.md"
+authors = [{name = "Ashlynn Antrobus", email = "ashlynn@prosepal.io"}]
+license = {text = "MIT"}
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Development Status :: 1 - Planning",
+    "Intended Audience :: End Users/Desktop",
+    "Environment :: Console",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Office/Business :: Financial :: Accounting"
+]
+requires-python = ">= 3.8"
+dependencies = [
+    "pydantic>=2.7.4",
+    "sqlalchemy>=2.0.30"
+]
+
+[project.optional-dependencies]
+development = [
+    "isort",
+    "mypy",
+    "pre-commit",
+    "pytest",
+    "ruff"
+]
+
+
+[tool.ruff]
+line-length = 79
+force-exclude = true
+exclude = [".git", "__pycache__", ".venv", "*cache"]
+
+[tool.isort]
+line_length = 79
+
+[tool.mypy]
+disable_error_code = "import-untyped"
